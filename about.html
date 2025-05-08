@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glam Beauty - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#FF80B5',
+                            DEFAULT: '#FF4081',
+                            dark: '#C60055',
+                        },
+                        secondary: {
+                            light: '#FFD6E7',
+                            DEFAULT: '#FFC0CB',
+                            dark: '#FFAABB',
+                        },
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Announcement Bar -->
+    <div class="bg-primary-dark text-white py-2 text-center text-sm">
+        Free shipping on all orders over $50 | Use code GLAM10 for 10% off
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <svg class="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FF4081"/>
+                </svg>
+                <span class="text-2xl font-bold text-primary">Glam Beauty</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a></li>
+                    <li><a href="prod.html" class="text-gray-800 hover:text-primary font-medium">Shop</a></li>
+                    <li><a href="about.html" class="text-gray-800 hover:text-primary font-medium">About</a></li>
+                    <li><a href="contact.html" class="text-gray-800 hover:text-primary font-medium">Contact</a></li>
+                </ul>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <header class="relative py-20 bg-secondary-light">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Our Story</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">At Glam Beauty, we believe in enhancing natural beauty and empowering self-expression through premium cosmetics.</p>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1597931752949-98c74b5b159f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Our Mission" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2023, Glam Beauty was born from a passion to create cosmetics that are both high-quality and accessible. We believe beauty products should enhance, not mask, your natural features.</p>
+                    <p class="text-gray-600 mb-6">Our mission is to provide innovative beauty solutions that inspire confidence and creativity, while maintaining our commitment to ethical practices and sustainability.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Cruelty-free and vegan-friendly products</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Sustainably sourced ingredients</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Eco-conscious packaging</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                            <span>Inclusive range for all skin tones</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center">
+                    <img src="chinnu.jpeg" alt="Likhitha" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Likhitha Kanthraj</h3>
+                        <p class="text-primary mb-3">Founder & CEO</p>
+                        <p class="text-gray-600 mb-4">Beauty industry veteran with a passion for creating inclusive products.</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center">
+                    <img src="ammi.jpeg" alt="Harshitha Kanthraj class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Harshitha Kanthraj</h3>
+                        <p class="text-primary mb-3">Lead Formulator</p>
+                        <p class="text-gray-600 mb-4">Cosmetic chemist dedicated to creating innovative, skin-loving formulas.</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center">
+                    <img src="maa.jpeg" alt="Sumithra Kanthraj" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-1">Sumithra Kanthraj</h3>
+                        <p class="text-primary mb-3">Creative Director</p>
+                        <p class="text-gray-600 mb-4">Artist and designer bringing our brand vision to life with creativity.</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FF4081"/>
+                        </svg>
+                        <span class="text-xl font-bold">Glam Beauty</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Enhancing your natural beauty with premium cosmetics since 2023.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="prod.html" class="text-gray-400 hover:text-white">Shop</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>123 Beauty Lane, Glamour City, 56789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>support@glambeauty.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2025 Glam Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

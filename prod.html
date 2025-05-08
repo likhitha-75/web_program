@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Glam Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#FF80B5',
+                            DEFAULT: '#FF4081',
+                            dark: '#C60055',
+                        },
+                        secondary: {
+                            light: '#FFD6E7',
+                            DEFAULT: '#FFC0CB',
+                            dark: '#FFAABB',
+                        },
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Announcement Bar -->
+    <div class="bg-primary-dark text-white py-2 text-center text-sm">
+        Free shipping on all orders over $50 | Use code GLAM10 for 10% off
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <svg class="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FF4081"/>
+                </svg>
+                <span class="text-2xl font-bold text-primary">Glam Beauty</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a></li>
+                    <li><a href="prod.html" class="text-gray-800 hover:text-primary font-medium">Shop</a></li>
+                    <li><a href="about.html" class="text-gray-800 hover:text-primary font-medium">About</a></li>
+                    <li><a href="contact.html" class="text-gray-800 hover:text-primary font-medium">Contact</a></li>
+                </ul>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-primary relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-secondary-light py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-primary mb-2">Our Products</h1>
+            <p class="text-gray-600 max-w-md mx-auto">Discover our range of premium beauty products designed to enhance your natural beauty.</p>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+            <div class="flex items-center space-x-2">
+                <span class="text-gray-600">Filter by:</span>
+                <select class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <option>All Categories</option>
+                    <option>Lips</option>
+                    <option>Face</option>
+                    <option>Eyes</option>
+                    <option>Skincare</option>
+                </select>
+                <select class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <option>Price Range</option>
+                    <option>Under $10</option>
+                    <option>$10 - $20</option>
+                    <option>$20 - $30</option>
+                    <option>$30+</option>
+                </select>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+                <span class="text-gray-600">Sort by:</span>
+                <select class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <option>Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest</option>
+                    <option>Best Selling</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Luxury Lipstick" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded">New</span>
+                    </div>
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Luxury Matte Lipstick</h3>
+                    <p class="text-gray-500 text-sm mb-2">Long-lasting, velvety finish</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(42)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$15.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="foundation.jpg" alt="Flawless Foundation" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded">Best Seller</span>
+                    </div>
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Flawless Foundation</h3>
+                    <p class="text-gray-500 text-sm mb-2">Buildable coverage, natural finish</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(67)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$20.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="shimmer.jpg" alt="Shimmer Eyeshadow" class="w-full h-64 object-cover" width="100" height="100">
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Shimmer Eyeshadow Palette</h3>
+                    <p class="text-gray-500 text-sm mb-2">10 versatile, pigmented shades</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="far fa-star text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(23)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$18.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="hydrating.jpg" alt="Hydrating Serum" class="w-full h-64 object-cover">
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Hydrating Facial Serum</h3>
+                    <p class="text-gray-500 text-sm mb-2">Intense hydration, glowing skin</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(36)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$24.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="mascara.avif" alt="Volumizing Mascara" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">20% OFF</span>
+                    </div>
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Volumizing Mascara</h3>
+                    <p class="text-gray-500 text-sm mb-2">Dramatic lashes, no clumps</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="far fa-star text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(19)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="font-bold text-lg">$12.00</span>
+                            <span class="text-gray-500 line-through text-sm ml-2">$15.00</span>
+                        </div>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="blush.jpg" alt="Creamy Blush" class="w-full h-64 object-cover">
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Creamy Blush</h3>
+                    <p class="text-gray-500 text-sm mb-2">Natural flush, blendable formula</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        <i class="far fa-star text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(14)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$16.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Setting Powder" class="w-full h-64 object-cover">
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Translucent Setting Powder</h3>
+                    <p class="text-gray-500 text-sm mb-2">Lightweight, matte finish</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(51)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$22.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Brow Gel" class="w-full h-64 object-cover">
+                    <div class="absolute top-2 left-2">
+                        <span class="bg-primary text-white text-xs px-2 py-1 rounded">New</span>
+                    </div>
+                    <button class="absolute top-2 right-2 text-gray-700 hover:text-primary bg-white rounded-full p-2 shadow-md">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-1">Tinted Brow Gel</h3>
+                    <p class="text-gray-500 text-sm mb-2">Defined brows, natural look</p>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="far fa-star text-yellow-400"></i>
+                        <span class="text-gray-500 text-sm ml-1">(9)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-lg">$14.00</span>
+                        <button onclick="addToCart()" class="bg-primary hover:bg-primary-dark text-white px-3 py-1 rounded-full text-sm transition duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pagination -->
+    <div class="container mx-auto px-4 py-8 flex justify-center">
+        <nav class="flex items-center">
+            <a href="#" class="px-3 py-1 border border-gray-300 rounded-l-md hover:bg-gray-100">
+                <i class="fas fa-chevron-left text-gray-600"></i>
+            </a>
+            <a href="#" class="px-3 py-1 border-t border-b border-gray-300 bg-primary text-white">1</a>
+            <a href="#" class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 text-gray-600">2</a>
+            <a href="#" class="px-3 py-1 border-t border-b border-gray-300 hover:bg-gray-100 text-gray-600">3</a>
+            <a href="#" class="px-3 py-1 border border-gray-300 rounded-r-md hover:bg-gray-100">
+                <i class="fas fa-chevron-right text-gray-600"></i>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FF4081"/>
+                        </svg>
+                        <span class="text-xl font-bold">Glam Beauty</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Enhancing your natural beauty with premium cosmetics since 2023.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="prod.html" class="text-gray-400 hover:text-white">Shop</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                            <span>123 Beauty Lane, Glamour City, 56789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>support@glambeauty.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2025 Glam Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="fixed bottom-4 right-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        function addToCart() {
+            alert("Product added to cart! 🛍️");
+        }
+    </script>
+</body>
+</html>
